@@ -1,25 +1,35 @@
 PODS:
-  - DeskCommon (1.0.3)
-  - OHHTTPStubs (3.1.12):
-    - OHHTTPStubs/Core (= 3.1.12)
-  - OHHTTPStubs/Core (3.1.12)
+  - DeskCommon (1.0.4)
+  - OHHTTPStubs (4.2.0):
+    - OHHTTPStubs/Default (= 4.2.0)
+  - OHHTTPStubs/Core (4.2.0)
+  - OHHTTPStubs/Default (4.2.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (4.2.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (4.2.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (4.2.0)
 
 DEPENDENCIES:
-  - DeskCommon (from `https://github.com/forcedotcom/DeskCommon-Cocoa.git`, tag `1.0.3`)
-  - OHHTTPStubs (~> 3.1.9)
+  - DeskCommon (from `https://github.com/forcedotcom/DeskCommon-Cocoa.git`, tag `1.0.4`)
+  - OHHTTPStubs
 
 EXTERNAL SOURCES:
   DeskCommon:
     :git: https://github.com/forcedotcom/DeskCommon-Cocoa.git
-    :tag: 1.0.3
+    :tag: 1.0.4
 
 CHECKOUT OPTIONS:
   DeskCommon:
     :git: https://github.com/forcedotcom/DeskCommon-Cocoa.git
-    :tag: 1.0.3
+    :tag: 1.0.4
 
 SPEC CHECKSUMS:
-  DeskCommon: e4f7845e2dc91bfb03cd142e67de8ee8e2f89c82
-  OHHTTPStubs: 8cf0cfe6f34f13fc88fdf5b2a1b2c2536e8c0261
+  DeskCommon: 73004224f77a3e50ef8f8323705e28c3634754f7
+  OHHTTPStubs: f639130b83fb5f4f022d38f841141b0a6fa77249
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.2

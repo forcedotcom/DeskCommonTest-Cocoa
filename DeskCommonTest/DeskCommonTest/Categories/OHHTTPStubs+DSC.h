@@ -28,7 +28,7 @@
 //  POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import <OHHTTPStubs/OHHTTPStubs.h>
+#import "OHHTTPStubs.h"
 
 typedef NS_ENUM(NSUInteger, DSCMatchType) {
     DSCMatchTypeContains,

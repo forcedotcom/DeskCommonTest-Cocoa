@@ -12,7 +12,9 @@
 xcuserdata
 profile
 *.moved-aside
+*.xccheckout
 DerivedData
+*.xcuserstate
 .idea/
 *.hmap
 
