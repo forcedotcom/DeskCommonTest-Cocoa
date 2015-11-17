@@ -163,6 +163,7 @@ static NSBundle *fixturesBundle = nil;
             }
         }
     }
+    return nil;
 }
 
 @end
