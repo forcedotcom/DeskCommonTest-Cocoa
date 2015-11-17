@@ -70,4 +70,6 @@ typedef NS_ENUM(NSUInteger, DSCMatchType) {
 
 + (void)tearDownResponseStubs;
 
++ (void)setFixturesBundle:(NSBundle *)bundle;
+
 @end
