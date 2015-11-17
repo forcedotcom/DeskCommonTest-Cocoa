@@ -92,8 +92,8 @@
                         andHTTPVerb:(NSString *)httpVerb
 {
     NSDictionary *responseHeaders = @{@"Content-Type":@"text/json"};
-    NSString *filePath = [[NSBundle bundleForClass:[self class]] pathForResource:fixtureName
-                                                                          ofType:@"json"];
+    NSString *filePath = [self findResourcePathForFixtureName:fixtureName];
+    
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         NSString *url = request.URL.absoluteString;
         BOOL tagMatches = YES;
@@ -135,6 +135,34 @@
 + (void)tearDownResponseStubs
 {
     [OHHTTPStubs removeAllStubs];
+}
+
+static NSBundle *fixturesBundle = nil;
+
++ (void)setFixturesBundle:(NSBundle *)bundle
+{
+    fixturesBundle = bundle;
+}
+
+#pragma mark - Private
++ (NSString *)findResourcePathForFixtureName:(NSString *)fixtureName
+{
+    if (fixturesBundle)
+    {
+        return [fixturesBundle pathForResource:fixtureName ofType:@"json"];
+    }
+    else
+    {
+        NSArray *bundles = [NSBundle allBundles];
+        for (NSBundle *bundle in bundles)
+        {
+            NSString *resourcePath = [bundle pathForResource:fixtureName ofType:@"json"];
+            if (resourcePath)
+            {
+                return resourcePath;
+            }
+        }
+    }
 }
 
 @end
